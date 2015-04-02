@@ -29,6 +29,10 @@
 		3CC05A191ACCAEE400168941 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A181ACCAEE400168941 /* libsqlite3.dylib */; };
 		3CC05A1B1ACCB13300168941 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A1A1ACCB13300168941 /* ParseCrashReporting.framework */; };
 		3CC05A1D1ACCB13B00168941 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A1C1ACCB13B00168941 /* ParseUI.framework */; };
+		3CC05A201ACCB58800168941 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A1F1ACCB58800168941 /* ParseFacebookUtilsV4.framework */; };
+		3CC05A221ACCB5A100168941 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A211ACCB5A100168941 /* ParseFacebookUtils.framework */; };
+		3CC05A271ACCE56000168941 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC05A261ACCE56000168941 /* TableViewController.swift */; };
+		3CC05A291ACCEDE500168941 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC05A281ACCEDE500168941 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,11 @@
 		3CC05A181ACCAEE400168941 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3CC05A1A1ACCB13300168941 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		3CC05A1C1ACCB13B00168941 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		3CC05A1F1ACCB58800168941 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../Downloads/parse-library-1.7.0/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		3CC05A211ACCB5A100168941 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		3CC05A231ACCB67000168941 /* Frii-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frii-Bridging-Header.h"; sourceTree = "<group>"; };
+		3CC05A261ACCE56000168941 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3CC05A281ACCEDE500168941 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +89,13 @@
 				3CC05A151ACCAEC500168941 /* SystemConfiguration.framework in Frameworks */,
 				3CC05A131ACCAEBE00168941 /* StoreKit.framework in Frameworks */,
 				3CC05A111ACCAEB500168941 /* Security.framework in Frameworks */,
+				3CC05A221ACCB5A100168941 /* ParseFacebookUtils.framework in Frameworks */,
 				3CC05A1B1ACCB13300168941 /* ParseCrashReporting.framework in Frameworks */,
 				3CC05A0F1ACCAEA800168941 /* QuartzCore.framework in Frameworks */,
 				3CC05A0D1ACCAE9C00168941 /* MobileCoreServices.framework in Frameworks */,
 				3CC05A0B1ACCAE8D00168941 /* CoreLocation.framework in Frameworks */,
 				3CC05A091ACCAE8600168941 /* CoreGraphics.framework in Frameworks */,
+				3CC05A201ACCB58800168941 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				3CC05A071ACCAE7E00168941 /* CFNetwork.framework in Frameworks */,
 				3CC05A051ACCAE7400168941 /* AudioToolbox.framework in Frameworks */,
 				3CC05A1D1ACCB13B00168941 /* ParseUI.framework in Frameworks */,
@@ -110,6 +121,7 @@
 				3CC059DA1ACC70E400168941 /* Frii */,
 				3CC059F21ACC70E400168941 /* FriiTests */,
 				3CC059D91ACC70E400168941 /* Products */,
+				3CC05A231ACCB67000168941 /* Frii-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +141,8 @@
 				3CC059DF1ACC70E400168941 /* FirstViewController.swift */,
 				3CC059E11ACC70E400168941 /* SecondViewController.swift */,
 				3CC059E31ACC70E400168941 /* Main.storyboard */,
+				3CC05A281ACCEDE500168941 /* DetailViewController.swift */,
+				3CC05A261ACCE56000168941 /* TableViewController.swift */,
 				3CC059E61ACC70E400168941 /* Images.xcassets */,
 				3CC059E81ACC70E400168941 /* LaunchScreen.xib */,
 				3CC059DB1ACC70E400168941 /* Supporting Files */,
@@ -164,6 +178,8 @@
 		3CC05A011ACCAE3900168941 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CC05A211ACCB5A100168941 /* ParseFacebookUtils.framework */,
+				3CC05A1F1ACCB58800168941 /* ParseFacebookUtilsV4.framework */,
 				3CC05A1C1ACCB13B00168941 /* ParseUI.framework */,
 				3CC05A1A1ACCB13300168941 /* ParseCrashReporting.framework */,
 				3CC05A181ACCAEE400168941 /* libsqlite3.dylib */,
@@ -285,7 +301,9 @@
 			files = (
 				3CC059E21ACC70E400168941 /* SecondViewController.swift in Sources */,
 				3CC059DE1ACC70E400168941 /* AppDelegate.swift in Sources */,
+				3CC05A291ACCEDE500168941 /* DetailViewController.swift in Sources */,
 				3CC059E01ACC70E400168941 /* FirstViewController.swift in Sources */,
+				3CC05A271ACCE56000168941 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,13 +428,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/manosaie/Downloads/parse-library-1.7.0",
 				);
 				INFOPLIST_FILE = Frii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Frii-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -424,13 +446,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/manosaie/Downloads/parse-library-1.7.0",
 				);
 				INFOPLIST_FILE = Frii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Frii-Bridging-Header.h";
 			};
 			name = Release;
 		};
