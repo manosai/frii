@@ -47,7 +47,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJR-Wm-jHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="-197"/>
+            <point key="canvasLocation" x="1103" y="-141"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="IiD-L9-dY9">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSR-BJ-mgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-197"/>
+            <point key="canvasLocation" x="1848" y="-141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z73-82-arQ">
@@ -183,12 +183,46 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Z0f-Kr-o12" kind="relationship" relationship="rootViewController" id="pYg-fd-jzJ"/>
+                        <segue destination="3XV-Qn-h9Z" kind="relationship" relationship="rootViewController" id="E55-M2-qug"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wd-r9-ORz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="-197"/>
+            <point key="canvasLocation" x="103" y="-141"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XB9-Wc-JKO">
+            <objects>
+                <viewController id="3XV-Qn-h9Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQh-gx-QpR"/>
+                        <viewControllerLayoutGuide type="bottom" id="fZy-Ez-TdN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FIU-Xj-dYB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-Gx-kjs">
+                                <rect key="frame" x="292" y="385" width="39" height="30"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z0f-Kr-o12" kind="show" id="SFQ-hW-s5o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fZy-Ez-TdN" firstAttribute="top" secondItem="zlc-Gx-kjs" secondAttribute="bottom" constant="185" id="JtA-Ur-QZ3"/>
+                            <constraint firstItem="zlc-Gx-kjs" firstAttribute="leading" secondItem="FIU-Xj-dYB" secondAttribute="leading" constant="292" id="Tgl-rr-dN3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tRn-jc-Fy8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Y7-15-cqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537" y="-821"/>
         </scene>
     </scenes>
 </document>
