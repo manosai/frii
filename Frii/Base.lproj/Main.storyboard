@@ -206,6 +206,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="YG4-mJ-1lB" kind="modal" modalTransitionStyle="crossDissolve" id="MRK-m8-UvX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yL-cH-f7p">
                                 <rect key="frame" x="202" y="143" width="157" height="68"/>
@@ -220,7 +223,6 @@
                                 </state>
                                 <connections>
                                     <action selector="createButton:" destination="p2M-a9-L2r" eventType="touchUpInside" id="NGK-z8-mk2"/>
-                                    <segue destination="YG4-mJ-1lB" kind="show" id="XGV-6r-VJB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="242.5" y="-923.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Date View Controller-->
         <scene sceneID="z8O-oi-zGY">
             <objects>
-                <viewController id="YG4-mJ-1lB" sceneMemberID="viewController">
+                <viewController id="YG4-mJ-1lB" customClass="StartDateViewController" customModule="Frii" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AuE-mL-Hl9"/>
                         <viewControllerLayoutGuide type="bottom" id="fhy-W2-GhO"/>
@@ -247,12 +249,29 @@
                     <view key="view" contentMode="scaleToFill" id="8QN-Ic-JNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="GZQ-qZ-MGn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STy-DK-RCo" customClass="CVCalendarView" customModule="Frii" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="87" width="375" height="193"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7c-i1-fRT" customClass="CVCalendarMenuView" customModule="Frii" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="376" height="26"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="calendarView" destination="STy-DK-RCo" id="3Vk-qL-w4M"/>
+                        <outlet property="menuView" destination="R7c-i1-fRT" id="8zv-JX-fog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPZ-tX-p2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="-957"/>
+            <point key="canvasLocation" x="713.5" y="-923.5"/>
         </scene>
     </scenes>
     <resources>
