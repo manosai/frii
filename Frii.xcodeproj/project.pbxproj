@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C55ADA71AD7883500029A09 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C55ADA61AD7883500029A09 /* CreateViewController.swift */; };
 		3CC059DE1ACC70E400168941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC059DD1ACC70E400168941 /* AppDelegate.swift */; };
 		3CC059E01ACC70E400168941 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC059DF1ACC70E400168941 /* FirstViewController.swift */; };
 		3CC059E21ACC70E400168941 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC059E11ACC70E400168941 /* SecondViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C55ADA61AD7883500029A09 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		3CC059D81ACC70E400168941 /* Frii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC059DC1ACC70E400168941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC059DD1ACC70E400168941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				3CC059DF1ACC70E400168941 /* FirstViewController.swift */,
 				3CC059E11ACC70E400168941 /* SecondViewController.swift */,
 				3CC059E31ACC70E400168941 /* Main.storyboard */,
+				3C55ADA61AD7883500029A09 /* CreateViewController.swift */,
 				3CC05A281ACCEDE500168941 /* DetailViewController.swift */,
 				3CC05A261ACCE56000168941 /* TableViewController.swift */,
 				3CC059E61ACC70E400168941 /* Images.xcassets */,
@@ -301,6 +304,7 @@
 			files = (
 				3CC059E21ACC70E400168941 /* SecondViewController.swift in Sources */,
 				3CC059DE1ACC70E400168941 /* AppDelegate.swift in Sources */,
+				3C55ADA71AD7883500029A09 /* CreateViewController.swift in Sources */,
 				3CC05A291ACCEDE500168941 /* DetailViewController.swift in Sources */,
 				3CC059E01ACC70E400168941 /* FirstViewController.swift in Sources */,
 				3CC05A271ACCE56000168941 /* TableViewController.swift in Sources */,
