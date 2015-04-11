@@ -53,8 +53,6 @@
 		3CC05A1D1ACCB13B00168941 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A1C1ACCB13B00168941 /* ParseUI.framework */; };
 		3CC05A201ACCB58800168941 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A1F1ACCB58800168941 /* ParseFacebookUtilsV4.framework */; };
 		3CC05A221ACCB5A100168941 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC05A211ACCB5A100168941 /* ParseFacebookUtils.framework */; };
-		3CC05A271ACCE56000168941 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC05A261ACCE56000168941 /* TableViewController.swift */; };
-		3CC05A291ACCEDE500168941 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC05A281ACCEDE500168941 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +117,6 @@
 		3CC05A1F1ACCB58800168941 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../Downloads/parse-library-1.7.0/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		3CC05A211ACCB5A100168941 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3CC05A231ACCB67000168941 /* Frii-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frii-Bridging-Header.h"; sourceTree = "<group>"; };
-		3CC05A261ACCE56000168941 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		3CC05A281ACCEDE500168941 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +211,6 @@
 				3CC059E31ACC70E400168941 /* Main.storyboard */,
 				3C55ADD11AD8C84200029A09 /* StartDateViewController.swift */,
 				3C55ADA61AD7883500029A09 /* CreateViewController.swift */,
-				3CC05A281ACCEDE500168941 /* DetailViewController.swift */,
-				3CC05A261ACCE56000168941 /* TableViewController.swift */,
 				3CC059E61ACC70E400168941 /* Images.xcassets */,
 				3CC059E81ACC70E400168941 /* LaunchScreen.xib */,
 				3CC059DB1ACC70E400168941 /* Supporting Files */,
@@ -380,7 +374,6 @@
 				3C55ADA71AD7883500029A09 /* CreateViewController.swift in Sources */,
 				3C55ADC41AD8C2CA00029A09 /* CVCalendarMonthView.swift in Sources */,
 				3C55ADC31AD8C2CA00029A09 /* CVCalendarMonthContentView.swift in Sources */,
-				3CC05A291ACCEDE500168941 /* DetailViewController.swift in Sources */,
 				3CC059E01ACC70E400168941 /* FirstViewController.swift in Sources */,
 				3C55ADC91AD8C2CA00029A09 /* CVCalendarViewAppearance.swift in Sources */,
 				3C55ADC71AD8C2CA00029A09 /* CVCalendarViewAnimator.swift in Sources */,
@@ -392,7 +385,6 @@
 				3C55ADC11AD8C2CA00029A09 /* CVCalendarManager.swift in Sources */,
 				3C55ADCC1AD8C2CA00029A09 /* CVCalendarWeekContentRecovery.swift in Sources */,
 				3C55ADBE1AD8C2CA00029A09 /* CVCalendarContentViewController.swift in Sources */,
-				3CC05A271ACCE56000168941 /* TableViewController.swift in Sources */,
 				3C55ADBD1AD8C2CA00029A09 /* CVCalendarContentDelegate.swift in Sources */,
 				3C55ADCF1AD8C2CA00029A09 /* CVCircleView.swift in Sources */,
 				3C55ADCD1AD8C2CA00029A09 /* CVCalendarWeekContentView.swift in Sources */,
