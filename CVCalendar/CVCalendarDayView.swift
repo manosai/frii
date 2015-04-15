@@ -294,16 +294,30 @@ class CVCalendarDayView: UIView {
             self.dayLabel?.textColor = .redColor()
             counter += 1
             
-        // every other one
+        // every other day being selected
         } else {
             counter += 1
-            color = appearance.dayLabelWeekdayHighlightedBackgroundColor
-            _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
-            self.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor
-            self.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelWeekdayHighlightedTextSize!)
-            
-            self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
-            self.insertSubview(self.circleView!, atIndex: 0)
+            // if the day is already selected and being clicked on, 
+            // then unselect it
+            if self.dayLabel?.textColor == .whiteColor() {
+                println("already selected")
+                var color: UIColor? = appearance.dayLabelWeekdayInTextColor
+                var font: UIFont? = UIFont.systemFontOfSize(appearance.dayLabelWeekdayTextSize!)
+                
+                self.dayLabel?.textColor = color
+                self.dayLabel?.font = font
+                
+                self.circleView?.removeFromSuperview()
+                self.circleView = nil
+            }
+            else {
+                color = appearance.dayLabelWeekdayHighlightedBackgroundColor
+                _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
+                self.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor
+                self.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelWeekdayHighlightedTextSize!)
+                self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
+                self.insertSubview(self.circleView!, atIndex: 0)
+            }
         }
         self.moveDotMarker(false)
     }
