@@ -12,6 +12,8 @@ class StartDateViewController: UIViewController {
     
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
+    @IBOutlet weak var monthLabel: UILabel!
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -22,13 +24,23 @@ class StartDateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
+        self.monthLabel.text = CVDate(date: NSDate()).description()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> UIColor {
+        if dayView.date?.day == 3 {
+            return .redColor()
+        }
+
+        return .greenColor()
     }
     
     

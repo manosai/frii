@@ -52,7 +52,7 @@ class CVCalendarDayViewControlCoordinator: NSObject {
     }
     
     private func presentDeselectionOnDayView(dayView: CVCalendarDayView) {
-        self.animator?.animateDeselection(dayView, withControlCoordinator: CVCalendarDayViewControlCoordinator.sharedControlCoordinator)
+//        self.animator?.animateDeselection(dayView, withControlCoordinator: CVCalendarDayViewControlCoordinator.sharedControlCoordinator)
     }
     
     func animationStarted() {

@@ -250,15 +250,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="GZQ-qZ-MGn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STy-DK-RCo" customClass="CVCalendarView" customModule="Frii" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="87" width="375" height="193"/>
+                                <rect key="frame" x="-1" y="116" width="376" height="219"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7c-i1-fRT" customClass="CVCalendarMenuView" customModule="Frii" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="376" height="26"/>
+                                <rect key="frame" x="-1" y="88" width="376" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-vp-o3b">
+                                <rect key="frame" x="145" y="55" width="110" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -267,6 +272,7 @@
                     <connections>
                         <outlet property="calendarView" destination="STy-DK-RCo" id="3Vk-qL-w4M"/>
                         <outlet property="menuView" destination="R7c-i1-fRT" id="8zv-JX-fog"/>
+                        <outlet property="monthLabel" destination="S1W-vp-o3b" id="Y6R-Wa-9wi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPZ-tX-p2s" userLabel="First Responder" sceneMemberID="firstResponder"/>

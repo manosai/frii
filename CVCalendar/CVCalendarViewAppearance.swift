@@ -15,6 +15,8 @@ class CVCalendarViewAppearance: NSObject {
     class var sharedCalendarViewAppearance: CVCalendarViewAppearance {
         return sharedInstance
     }
+    
+    var counter = 0
 
     var spaceBetweenWeekViews: CGFloat? = 0
     var spaceBetweenDayViews: CGFloat? = 0
@@ -28,14 +30,14 @@ class CVCalendarViewAppearance: NSObject {
     
     var dayLabelWeekdayInTextColor: UIColor? = .blackColor()
     var dayLabelWeekdayOutTextColor: UIColor? = .grayColor()
-    var dayLabelWeekdayHighlightedBackgroundColor: UIColor? = .blueColor()
+    var dayLabelWeekdayHighlightedBackgroundColor: UIColor? = .redColor()
     var dayLabelWeekdayHighlightedBackgroundAlpha: CGFloat? = 0.6
     var dayLabelPresentWeekdayTextColor: UIColor? = .redColor()
-    var dayLabelPresentWeekdayHighlightedBackgroundColor: UIColor? = .redColor()
+    var dayLabelPresentWeekdayHighlightedBackgroundColor: UIColor? = .whiteColor()
     var dayLabelPresentWeekdayHighlightedBackgroundAlpha: CGFloat? = 0.6
     
     var dayLabelWeekdayHighlightedTextColor: UIColor? = .whiteColor()
-    var dayLabelPresentWeekdayHighlightedTextColor: UIColor? = .whiteColor()
+    var dayLabelPresentWeekdayHighlightedTextColor: UIColor? = .redColor()
     
     var dotMarkerColor: UIColor? = .whiteColor()
     var dotMarkerOffset: CGFloat? = 3.5
@@ -88,6 +90,7 @@ class CVCalendarViewAppearance: NSObject {
         }
         
         if let dayLabelWeekdayHighlightedBackgroundColor = self.delegate!.dayLabelWeekdayHighlightedBackgroundColor?() {
+            
             self.dayLabelWeekdayHighlightedBackgroundColor = dayLabelWeekdayHighlightedBackgroundColor
         }
         

@@ -24,6 +24,8 @@ class CVCalendarDayView: UIView {
     var isOut = false
     var isCurrentDay = false
     
+    var counter = 0
+    
     // MARK: - Initialization
     
     init(weekView: CVCalendarWeekView, frame: CGRect, weekdayIndex: Int) {
@@ -286,25 +288,29 @@ class CVCalendarDayView: UIView {
         var color: UIColor?
         var _alpha: CGFloat?
         
-        if self.isCurrentDay {
-            color = appearance.dayLabelPresentWeekdayHighlightedBackgroundColor!
-            _alpha = appearance.dayLabelPresentWeekdayHighlightedBackgroundAlpha!
-            self.dayLabel?.textColor = appearance.dayLabelPresentWeekdayHighlightedTextColor!
-            self.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelPresentWeekdayHighlightedTextSize!)
+        // the first time the calendar loads
+        if self.isCurrentDay && counter == 0 {
+            // do nothing with it
+            self.dayLabel?.textColor = .redColor()
+            counter += 1
+            
+        // every other one
         } else {
+            counter += 1
             color = appearance.dayLabelWeekdayHighlightedBackgroundColor
             _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
             self.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor
             self.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelWeekdayHighlightedTextSize!)
+            
+            self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
+            self.insertSubview(self.circleView!, atIndex: 0)
         }
-        
-        self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
-        self.insertSubview(self.circleView!, atIndex: 0)
         self.moveDotMarker(false)
     }
-    
+
     func setDayLabelUnhighlighted() {
         let appearance = CVCalendarViewAppearance.sharedCalendarViewAppearance
+        var _alpha: CGFloat? = 0.6
         
         var color: UIColor?
         if self.isOut {
@@ -312,26 +318,15 @@ class CVCalendarDayView: UIView {
         } else if self.isCurrentDay {
             color = appearance.dayLabelPresentWeekdayTextColor
         } else {
-            color = appearance.dayLabelWeekdayInTextColor
-        }
-        
-        var font: UIFont?
-        if self.isCurrentDay {
-            if appearance.dayLabelPresentWeekdayInitallyBold {
-                font = UIFont.boldSystemFontOfSize(appearance.dayLabelPresentWeekdayTextSize!)
-            } else {
-                font = UIFont.systemFontOfSize(appearance.dayLabelPresentWeekdayTextSize!)
-            }
-        } else {
-            font = UIFont.systemFontOfSize(appearance.dayLabelWeekdayTextSize!)
+            color = .whiteColor()
         }
         
         self.dayLabel?.textColor = color
-        self.dayLabel?.font = font
         
-        self.moveDotMarker(true)
-        self.circleView?.removeFromSuperview()
-        self.circleView = nil
+        color = .redColor()
+        
+        self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
+        self.insertSubview(self.circleView!, atIndex: 0)
     }
     
     // MARK: - View Destruction
