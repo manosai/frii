@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nUc-bo-rPc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YG4-mJ-1lB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -166,79 +166,6 @@
             </objects>
             <point key="canvasLocation" x="1848" y="-140.99999999999991"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="z73-82-arQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nUc-bo-rPc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qD-Cb-fJR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="p2M-a9-L2r" kind="relationship" relationship="rootViewController" id="Skh-rT-rol"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9wd-r9-ORz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-217" y="-923"/>
-        </scene>
-        <!--Create View Controller-->
-        <scene sceneID="vQA-lr-OTV">
-            <objects>
-                <viewController id="p2M-a9-L2r" customClass="CreateViewController" customModule="Frii" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9bd-fK-1dn"/>
-                        <viewControllerLayoutGuide type="bottom" id="20F-Se-IMc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DcJ-MU-5tw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Ur-gga">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Km-xM-NP9">
-                                <rect key="frame" x="16" y="143" width="157" height="63"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YG4-mJ-1lB" kind="modal" modalTransitionStyle="crossDissolve" id="MRK-m8-UvX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yL-cH-f7p">
-                                <rect key="frame" x="202" y="143" width="157" height="68"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIf-oG-mG0">
-                                <rect key="frame" x="133" y="565" width="110" height="32"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createButton:" destination="p2M-a9-L2r" eventType="touchUpInside" id="NGK-z8-mk2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QpN-rY-oIM">
-                        <nil key="title"/>
-                    </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgu-mc-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="242.5" y="-923.5"/>
-        </scene>
         <!--Start Date View Controller-->
         <scene sceneID="z8O-oi-zGY">
             <objects>
@@ -253,7 +180,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STy-DK-RCo" customClass="CVCalendarView" customModule="Frii" customModuleProvider="target">
                                 <rect key="frame" x="-1" y="116" width="376" height="219"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7c-i1-fRT" customClass="CVCalendarMenuView" customModule="Frii" customModuleProvider="target">
@@ -261,10 +187,74 @@
                                 <color key="backgroundColor" red="0.46645432327386327" green="0.72034660814835905" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-vp-o3b">
-                                <rect key="frame" x="145" y="55" width="110" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-Wq-TGu">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Meeting" id="mKM-6h-IEz">
+                                        <barButtonItem key="rightBarButtonItem" title="Next" id="Keh-ZK-E2H">
+                                            <connections>
+                                                <action selector="initializeSchedule:" destination="YG4-mJ-1lB" id="VmL-Gs-jJ0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="start time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-xw-hR5">
+                                <rect key="frame" x="43" y="353" width="98" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="end time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVP-df-3SM">
+                                <rect key="frame" x="42" y="498" width="93" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdO-X6-4tJ">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="contacts" id="Htd-pt-y3O"/>
+                                    <tabBarItem systemItem="topRated" id="2O7-e6-l2u"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhV-Cr-5FL">
+                                <rect key="frame" x="50" y="533" width="76" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="9" minValue="1" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="GkY-fY-pru">
+                                <rect key="frame" x="54" y="422" width="287" height="31"/>
+                                <connections>
+                                    <action selector="startSliderChanged:" destination="YG4-mJ-1lB" eventType="valueChanged" id="Z75-cw-BO8"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fks-Ta-THB">
+                                <rect key="frame" x="54" y="566" width="287" height="31"/>
+                                <connections>
+                                    <action selector="endSliderChanged:" destination="YG4-mJ-1lB" eventType="valueChanged" id="JrR-Oh-9Df"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JjJ-eY-3h5">
+                                <rect key="frame" x="253" y="353" width="86" height="29"/>
+                                <segments>
+                                    <segment title="AM"/>
+                                    <segment title="PM"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5xh-FT-Sjo">
+                                <rect key="frame" x="253" y="501" width="86" height="29"/>
+                                <segments>
+                                    <segment title="AM"/>
+                                    <segment title="PM"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRg-nO-bhZ">
+                                <rect key="frame" x="50" y="387" width="76" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -275,16 +265,18 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="calendarView" destination="STy-DK-RCo" id="3Vk-qL-w4M"/>
+                        <outlet property="endAMPM" destination="5xh-FT-Sjo" id="Rlv-1f-iWf"/>
+                        <outlet property="endSlider" destination="Fks-Ta-THB" id="AZK-R3-0Us"/>
+                        <outlet property="endTime" destination="WhV-Cr-5FL" id="492-Tj-H3B"/>
                         <outlet property="menuView" destination="R7c-i1-fRT" id="8zv-JX-fog"/>
-                        <outlet property="monthLabel" destination="S1W-vp-o3b" id="Y6R-Wa-9wi"/>
+                        <outlet property="startAMPM" destination="JjJ-eY-3h5" id="9VN-JX-3lf"/>
+                        <outlet property="startSlider" destination="GkY-fY-pru" id="S4B-P6-udY"/>
+                        <outlet property="startTime" destination="iRg-nO-bhZ" id="4sU-wt-I6o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPZ-tX-p2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713.5" y="-923.5"/>
+            <point key="canvasLocation" x="-262.5" y="-1151.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Portrait" width="375" height="603"/>
-    </resources>
 </document>

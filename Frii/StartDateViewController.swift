@@ -13,15 +13,23 @@ class StartDateViewController: UIViewController {
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var monthLabel: UILabel!
+
+    @IBOutlet weak var startAMPM: UISegmentedControl!
+    @IBOutlet weak var endAMPM: UISegmentedControl!
+    
+    @IBOutlet weak var startTime: UILabel!
+    @IBOutlet weak var startSlider: UISlider!
+    
+    @IBOutlet weak var endTime: UILabel!
+    @IBOutlet weak var endSlider: UISlider!
+    
     
     override func viewDidAppear(animated: Bool) {
         if var currentDates = NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
             NSUserDefaults.standardUserDefaults().setObject([], forKey: "scheduleDates")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-        self.monthLabel.text = CVDate(date: NSDate()).description()
         super.viewDidAppear(animated)
-        
         self.calendarView.commitCalendarViewUpdate()
         self.menuView.commitMenuViewUpdate()
     }
@@ -31,10 +39,7 @@ class StartDateViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
-        let cSelector : Selector = "reset:"
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: cSelector)
-        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
-        self.monthLabel.text = CVDate(date: NSDate()).description()
+        endAMPM.selectedSegmentIndex = 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,6 +82,43 @@ class StartDateViewController: UIViewController {
         }
     }
     
+    @IBAction func startSliderChanged(sender: UISlider) {
+        startTime.text = String(format: "%.0f", startSlider.value)+":00"
+    }
+    
+    @IBAction func endSliderChanged(sender: UISlider) {
+        endTime.text = String(format: "%.0f", endSlider.value)+":00"
+    }
+    
+    @IBAction func initializeSchedule(sender: UIBarButtonItem) {
+        var object = PFObject(className: "Schedules")
+        if var currentDates = NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+            
+            // create the object attributes to be added to the DB
+            object["dates"] = currentDates
+            object["startTime"] = startTime.text
+            object["endTime"] = endTime.text
+            if startAMPM.selectedSegmentIndex == 0 {
+                object["startAM"] = true
+            }
+            else {
+                object["startAM"] = false
+            }
+            if endAMPM.selectedSegmentIndex == 0 {
+                object["endPM"] = false
+            }
+            else {
+                object["endPM"] = true
+            }
+            
+            // Save the data back to the server in a background task
+            object.saveEventually(nil)
+           
+        }
+
+        
+       
+    }
     /*
     // MARK: - Navigation
 
