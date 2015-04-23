@@ -14,7 +14,6 @@ class StartDateViewController: UIViewController {
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    
     override func viewDidAppear(animated: Bool) {
         if var currentDates = NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
             NSUserDefaults.standardUserDefaults().setObject([], forKey: "scheduleDates")
@@ -32,20 +31,15 @@ class StartDateViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+        let cSelector : Selector = "reset:"
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: cSelector)
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
         self.monthLabel.text = CVDate(date: NSDate()).description()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> UIColor {
-        if dayView.date?.day == 3 {
-            return .redColor()
-        }
-
-        return .greenColor()
     }
     
     func presentedDateUpdated(date: CVDate) {
@@ -83,8 +77,6 @@ class StartDateViewController: UIViewController {
         }
     }
     
-    
-
     /*
     // MARK: - Navigation
 

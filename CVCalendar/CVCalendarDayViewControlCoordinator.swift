@@ -53,9 +53,85 @@ class CVCalendarDayViewControlCoordinator: NSObject {
                     
                     selectedDayView.circleView?.removeFromSuperview()
                     selectedDayView.circleView = nil
+                    
+                    // delete it from the array as well
+                    // go through the array and add everything back except for the date
+                    // that was just deleted
+                    var dates = [String]()
+                    let dateFormatter1 = NSDateFormatter()
+                    dateFormatter1.dateFormat = "MMMM"
+                    let dateFormatter2 = NSDateFormatter()
+                    dateFormatter2.dateFormat = "YYYY"
+                    var month = dateFormatter1.stringFromDate(selectedDayView.weekView!.monthView!.date!)
+                    var year = dateFormatter2.stringFromDate(selectedDayView.weekView!.monthView!.date!)
+                    var day = String(selectedDayView.dayLabel?.text ?? "")
+                    var myDate = year+"-"+month+"-"+day
+                    
+                    var dayOfWeek = "Sample"
+                    let formatter  = NSDateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    if let todayDate = formatter.dateFromString(myDate) {
+                        let dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "EEEE"
+                        let dayOfWeekString = dateFormatter.stringFromDate(todayDate)
+                        
+                        dayOfWeek = dayOfWeekString
+                    }
+                    
+                    if var currentDates =
+                        NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+                            var deletedDate = month+" "+day+" "+dayOfWeek
+                            for elem in currentDates {
+                                if elem as NSString != deletedDate {
+                                    dates.append(String(elem as NSString))
+                                }
+                            }
+                            
+                            NSUserDefaults.standardUserDefaults().setObject(dates, forKey: "scheduleDates")
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                    }
 
                 }
                 else {
+                    let dateFormatter1 = NSDateFormatter()
+                    dateFormatter1.dateFormat = "MMMM"
+                    let dateFormatter2 = NSDateFormatter()
+                    dateFormatter2.dateFormat = "YYYY"
+                    var month = dateFormatter1.stringFromDate(selectedDayView.weekView!.monthView!.date!)
+                    var year = dateFormatter2.stringFromDate(selectedDayView.weekView!.monthView!.date!)
+                    var day = String(selectedDayView.dayLabel?.text ?? "")
+                    var myDate = year+"-"+month+"-"+day
+                    
+                    var dayOfWeek = "Sample"
+                    let formatter  = NSDateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    if let todayDate = formatter.dateFromString(myDate) {
+                        let dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "EEEE"
+                        let dayOfWeekString = dateFormatter.stringFromDate(todayDate)
+                        
+                        dayOfWeek = dayOfWeekString
+                    }
+                    
+                    
+                    
+                    // add to array
+                    //dates.append(self.dayLabel)
+                    if var currentDates =
+                        NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+                            currentDates.append(month+" "+day+" "+dayOfWeek)
+                            println(currentDates)
+                            NSUserDefaults.standardUserDefaults().setObject(currentDates, forKey: "scheduleDates")
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                    }
+                    else {
+                        var dates = [String]()
+                        dates.append(String(selectedDayView.dayLabel?.text ?? ""))
+                        NSUserDefaults.standardUserDefaults().setObject(dates, forKey: "scheduleDates")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        
+                    }
+
                     var color: UIColor? = appearance.dayLabelWeekdayHighlightedBackgroundColor
                     var _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
                     selectedDayView.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor

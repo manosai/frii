@@ -312,6 +312,44 @@ class CVCalendarDayView: UIView {
                 
                 self.circleView?.removeFromSuperview()
                 self.circleView = nil
+                
+                // delete it from the array as well
+                // go through the array and add everything back except for the date
+                // that was just deleted
+                var dates = [String]()
+                let dateFormatter1 = NSDateFormatter()
+                dateFormatter1.dateFormat = "MMMM"
+                let dateFormatter2 = NSDateFormatter()
+                dateFormatter2.dateFormat = "YYYY"
+                var month = dateFormatter1.stringFromDate(self.weekView!.monthView!.date!)
+                var year = dateFormatter2.stringFromDate(self.weekView!.monthView!.date!)
+                var day = String(self.dayLabel?.text ?? "")
+                var myDate = year+"-"+month+"-"+day
+                
+                var dayOfWeek = "Sample"
+                let formatter  = NSDateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                if let todayDate = formatter.dateFromString(myDate) {
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "EEEE"
+                    let dayOfWeekString = dateFormatter.stringFromDate(todayDate)
+                    
+                    dayOfWeek = dayOfWeekString
+                }
+                
+                if var currentDates =
+                    NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+                        var deletedDate = month+" "+day+" "+dayOfWeek
+                        for elem in currentDates {
+                            if elem as NSString != deletedDate {
+                                dates.append(String(elem as NSString))
+                            }
+                        }
+                        
+                        NSUserDefaults.standardUserDefaults().setObject(dates, forKey: "scheduleDates")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                }
+
             }
             else {
                 
@@ -334,8 +372,6 @@ class CVCalendarDayView: UIView {
                     
                     dayOfWeek = dayOfWeekString
                 }
-                
-                
                 
                 
 

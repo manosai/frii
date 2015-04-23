@@ -52,11 +52,6 @@ class CVCalendarMonthView: UIView {
     // MARK: - Content filling
     
     func updateAppearance(frame: CGRect) {
-        let myDate = CVDate(date: NSDate())
-        let viewController = StartDateViewController(nibName: "StartDateViewController", bundle: NSBundle.mainBundle())
-        println(viewController)
-        //viewController.presentedDateUpdated(myDate)
-        
         self.frame = frame
         self.createWeekViews()
     }
@@ -86,6 +81,17 @@ class CVCalendarMonthView: UIView {
     // MARK: - View Destruction
     
     func destroy() {
+        let myDate = CVDate(date: NSDate())
+        let viewController = StartDateViewController(nibName: "StartDateViewController", bundle: NSBundle.mainBundle())
+        let calendarManager = CVCalendarManager.sharedManager
+        let month = calendarManager.dateRange(self.date!).month
+        let year = calendarManager.dateRange(self.date!).year
+        var currentDate = CVDate(date: NSDate())
+        //currentDate.month = month
+        //currentDate.year = year
+        println(currentDate.description)
+        println(month, year)
+        //viewController.monthLabel.text = currentDate.description
         let coordinator = CVCalendarDayViewControlCoordinator.sharedControlCoordinator
         if self.weekViews != nil {
             for weekView in self.weekViews! {
@@ -101,6 +107,8 @@ class CVCalendarMonthView: UIView {
             self.weekViews = nil
         }
     }
+    
+    // update the month view
     
     // MARK: Content reload 
     
