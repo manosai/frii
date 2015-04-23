@@ -37,6 +37,33 @@ class CVCalendarDayViewControlCoordinator: NSObject {
                     self.selectedDayView = dayView
                     self.presentSelectionOnDayView(self.selectedDayView!)
                 }
+            } else {
+                // if we want to unselect what we just selected
+                // look for white text
+                if (selectedDayView.dayLabel?.textColor == .whiteColor()) {
+                    println("already selected")
+                    var color: UIColor? = appearance.dayLabelWeekdayInTextColor
+                    if selectedDayView.isCurrentDay {
+                        color = appearance.dayLabelPresentWeekdayTextColor
+                    }
+                    var font: UIFont? = UIFont.systemFontOfSize(appearance.dayLabelWeekdayTextSize!)
+                    
+                    selectedDayView.dayLabel?.textColor = color
+                    selectedDayView.dayLabel?.font = font
+                    
+                    selectedDayView.circleView?.removeFromSuperview()
+                    selectedDayView.circleView = nil
+
+                }
+                else {
+                    var color: UIColor? = appearance.dayLabelWeekdayHighlightedBackgroundColor
+                    var _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
+                    selectedDayView.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor
+                    selectedDayView.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelWeekdayHighlightedTextSize!)
+                    selectedDayView.circleView = CVCircleView(frame: CGRectMake(0, 0, selectedDayView.dayLabel!.frame.width, selectedDayView.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
+                    selectedDayView.insertSubview(selectedDayView.circleView!, atIndex: 0)
+                    
+                }
             }
         } else {
             self.selectedDayView = dayView

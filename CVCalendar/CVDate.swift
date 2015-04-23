@@ -29,7 +29,6 @@ class CVDate: NSObject {
     
     init(day: Int, month: Int, week: Int, year: Int) {
         super.init()
-        
         self.year = year
         self.month = month
         self.week = week
@@ -42,6 +41,6 @@ class CVDate: NSObject {
         
         let month = dateFormatter.stringFromDate(self.date!)
         
-        return "\(month), \(self.year!)"
+        return "\(month) \(self.year!)"
     }
 }

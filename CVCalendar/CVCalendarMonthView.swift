@@ -26,7 +26,6 @@ class CVCalendarMonthView: UIView {
 
     init(calendarView: CVCalendarView, date: NSDate) {
         super.init()
-        
         self.calendarView = calendarView
         self.date = date
         
@@ -53,6 +52,11 @@ class CVCalendarMonthView: UIView {
     // MARK: - Content filling
     
     func updateAppearance(frame: CGRect) {
+        let myDate = CVDate(date: NSDate())
+        let viewController = StartDateViewController(nibName: "StartDateViewController", bundle: NSBundle.mainBundle())
+        println(viewController)
+        //viewController.presentedDateUpdated(myDate)
+        
         self.frame = frame
         self.createWeekViews()
     }

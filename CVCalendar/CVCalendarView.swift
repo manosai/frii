@@ -111,7 +111,7 @@ class CVCalendarView: UIView {
     
     override init() {
         super.init()
-        
+
         hidden = true
         loadCalendarMode()
         contentController = CVCalendarContentViewController(calendarView: self, frame: bounds)

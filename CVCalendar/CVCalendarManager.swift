@@ -116,7 +116,6 @@ class CVCalendarManager: NSObject {
         let firstMonthDateOut: NSDate? = {
             let firstMonthDateInWeekday = self.weekdayForDate(firstMonthDateIn)
             if firstMonthDateInWeekday == self.starterWeekday {
-                println("here")
                 return firstMonthDateIn
             }
             

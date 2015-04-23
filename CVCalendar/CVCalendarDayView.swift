@@ -25,12 +25,12 @@ class CVCalendarDayView: UIView {
     var isCurrentDay = false
     
     var counter = 0
+    var dates = [String]()
     
     // MARK: - Initialization
     
     init(weekView: CVCalendarWeekView, frame: CGRect, weekdayIndex: Int) {
         super.init()
-        
         self.weekView = weekView
         self.frame = frame
         self.weekdayIndex = weekdayIndex
@@ -302,6 +302,9 @@ class CVCalendarDayView: UIView {
             if self.dayLabel?.textColor == .whiteColor() {
                 println("already selected")
                 var color: UIColor? = appearance.dayLabelWeekdayInTextColor
+                if self.isCurrentDay {
+                    color = appearance.dayLabelPresentWeekdayTextColor
+                }
                 var font: UIFont? = UIFont.systemFontOfSize(appearance.dayLabelWeekdayTextSize!)
                 
                 self.dayLabel?.textColor = color
@@ -311,15 +314,56 @@ class CVCalendarDayView: UIView {
                 self.circleView = nil
             }
             else {
+                
+                let dateFormatter1 = NSDateFormatter()
+                dateFormatter1.dateFormat = "MMMM"
+                let dateFormatter2 = NSDateFormatter()
+                dateFormatter2.dateFormat = "YYYY"
+                var month = dateFormatter1.stringFromDate(self.weekView!.monthView!.date!)
+                var year = dateFormatter2.stringFromDate(self.weekView!.monthView!.date!)
+                var day = String(self.dayLabel?.text ?? "")
+                var myDate = year+"-"+month+"-"+day
+                
+                var dayOfWeek = "Sample"
+                let formatter  = NSDateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                if let todayDate = formatter.dateFromString(myDate) {
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "EEEE"
+                    let dayOfWeekString = dateFormatter.stringFromDate(todayDate)
+                    
+                    dayOfWeek = dayOfWeekString
+                }
+                
+                
+                
+                
+
+                // add to array
+                //dates.append(self.dayLabel)
+                if var currentDates =
+                    NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+                    currentDates.append(month+" "+day+" "+dayOfWeek)
+                    println(currentDates)
+                    NSUserDefaults.standardUserDefaults().setObject(currentDates, forKey: "scheduleDates")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                }
+                else {
+                    var dates = [String]()
+                    dates.append(String(self.dayLabel?.text ?? ""))
+                    NSUserDefaults.standardUserDefaults().setObject(dates, forKey: "scheduleDates")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                }
                 color = appearance.dayLabelWeekdayHighlightedBackgroundColor
                 _alpha = appearance.dayLabelWeekdayHighlightedBackgroundAlpha
                 self.dayLabel?.textColor = appearance.dayLabelWeekdayHighlightedTextColor
                 self.dayLabel?.font = UIFont.boldSystemFontOfSize(appearance.dayLabelWeekdayHighlightedTextSize!)
                 self.circleView = CVCircleView(frame: CGRectMake(0, 0, self.dayLabel!.frame.width, self.dayLabel!.frame.height), color: color!, _alpha: _alpha!)
                 self.insertSubview(self.circleView!, atIndex: 0)
+               
             }
         }
-        self.moveDotMarker(false)
     }
 
     func setDayLabelUnhighlighted() {

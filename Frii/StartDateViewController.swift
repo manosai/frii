@@ -16,6 +16,11 @@ class StartDateViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
+        if var currentDates = NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
+            NSUserDefaults.standardUserDefaults().setObject([], forKey: "scheduleDates")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        self.monthLabel.text = CVDate(date: NSDate()).description()
         super.viewDidAppear(animated)
         
         self.calendarView.commitCalendarViewUpdate()
@@ -43,6 +48,40 @@ class StartDateViewController: UIViewController {
         return .greenColor()
     }
     
+    func presentedDateUpdated(date: CVDate) {
+        if self.monthLabel.text != date.description()  {
+            let updatedMonthLabel = UILabel()
+            updatedMonthLabel.textColor = monthLabel.textColor
+            updatedMonthLabel.font = monthLabel.font
+            updatedMonthLabel.textAlignment = .Center
+            updatedMonthLabel.text = date.description
+            updatedMonthLabel.sizeToFit()
+            updatedMonthLabel.alpha = 0
+            updatedMonthLabel.center = self.monthLabel.center
+            
+            let offset = CGFloat(48)
+            updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
+            updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
+            
+            UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
+                self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
+                self.monthLabel.alpha = 0
+                
+                updatedMonthLabel.alpha = 1
+                updatedMonthLabel.transform = CGAffineTransformIdentity
+                
+                }) { (finished) -> Void in
+                    self.monthLabel.frame = updatedMonthLabel.frame
+                    self.monthLabel.text = updatedMonthLabel.text
+                    self.monthLabel.transform = CGAffineTransformIdentity
+                    self.monthLabel.alpha = 1
+                    updatedMonthLabel.removeFromSuperview()
+            }
+            
+            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+        }
+    }
     
     
 
