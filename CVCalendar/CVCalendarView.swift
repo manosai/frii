@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias Date = CVDate
+
 enum CVCalendarViewMode {
     case MonthView
     case WeekView
@@ -39,11 +41,14 @@ class CVCalendarView: UIView {
     }
     
     // MARK: - Current date 
-    var presentedDate: CVDate? {
+    var presentedDate: Date! {
         didSet {
-            self.delegate?.presentedDateUpdated(self.presentedDate!)
+            if let oldValue = oldValue {
+                delegate?.presentedDateUpdated(presentedDate)
+            }
         }
     }
+
     
     // MARK: - Calendar View Delegate
     
@@ -143,12 +148,12 @@ class CVCalendarView: UIView {
     }
     
     func didSelectDayView(dayView: CVCalendarDayView) {
-        self.delegate?.didSelectDayView(dayView)
-        if contentController != nil {
-            contentController.performedDayViewSelection(dayView)
+        if let controller = contentController {
+            presentedDate = dayView.date
+            delegate?.didSelectDayView(dayView)
+            controller.performedDayViewSelection(dayView)
         }
     }
-    
     // MARK: - Final preparation
     
     // Called on view's appearing.

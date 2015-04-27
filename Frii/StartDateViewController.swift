@@ -12,7 +12,6 @@ class StartDateViewController: UIViewController {
     
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
-    @IBOutlet weak var monthLabel: UILabel!
 
     @IBOutlet weak var startAMPM: UISegmentedControl!
     @IBOutlet weak var endAMPM: UISegmentedControl!
@@ -23,6 +22,7 @@ class StartDateViewController: UIViewController {
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var endSlider: UISlider!
     
+    @IBOutlet weak var monthLabel: UILabel!
     
     override func viewDidAppear(animated: Bool) {
         if var currentDates = NSUserDefaults.standardUserDefaults().arrayForKey("scheduleDates")? {
@@ -39,6 +39,7 @@ class StartDateViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+        self.monthLabel.text = CVDate(date: NSDate()).description()
         endAMPM.selectedSegmentIndex = 1
     }
     
